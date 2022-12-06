@@ -38,6 +38,7 @@ JDK_VERSIONS = [
 ]
 
 PLATFORMS = [
+    "illumos",
     "linux",
     "macos",
     "macos_aarch64",

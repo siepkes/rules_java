@@ -168,6 +168,22 @@ def remote_jdk8_repos(name = ""):
 
 def remote_jdk11_repos():
     """Imports OpenJDK 11 repositories."""
+
+    maybe(
+        remote_java_repository,
+        name = "remotejdk11_illumos",
+        target_compatible_with = [
+            "@platforms//os:illumos",
+            "@platforms//cpu:x86_64",
+        ],
+        sha256 = "c4d5a78655b3edaaad688d1ec0bbd80e020ed4551131e65976caa6ae3b9a93bf",
+        strip_prefix = "jdk11.0.6",
+        urls = [
+            "http://misc.serviceplanet.nl/java/openjdk/illumos/11/jdk11.0.6.tar.bz2",
+        ],
+        version = "11",
+    )
+
     maybe(
         remote_java_repository,
         name = "remotejdk11_linux",
